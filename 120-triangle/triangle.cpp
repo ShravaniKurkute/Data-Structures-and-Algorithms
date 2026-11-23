@@ -4,7 +4,7 @@ public:
         int m = triangle.size();
         int n = triangle[m-1].size();
         vector<vector<int>> dp(m, vector<int>(n, 0));
-        for(int i=0; i<m; i++){
+        for(int i=0; i<n; i++){
             dp[m-1][i] = triangle[m-1][i];
         }
         for(int i=m-2; i>=0; i--){
