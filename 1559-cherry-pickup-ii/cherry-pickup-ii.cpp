@@ -17,18 +17,18 @@ public:
 
         for(int ic=-1; ic<=1; ic++){
             for(int jc=-1; jc<=1; jc++){
-                int ans = solve(i+1, j1+ic, j2+jc, grid, dp);
+                int ans = solve(i+1, j1+ic, jc+j2, grid, dp);
                 maxi = max(maxi, ans);
             }
         }
         return dp[i][j1][j2] = cherries + maxi;
     }
+
     int cherryPickup(vector<vector<int>>& grid) {
         int m = grid.size();
         int n = grid[0].size();
 
-        vector<vector<vector<int>>> dp(m, vector<vector<int>>(n, vector<int>(n, -1)));    
-
+        vector<vector<vector<int>>> dp(m, vector<vector<int>>(n, vector<int>(n, -1)));
         return solve(0, 0, n-1, grid, dp);
     }
 };
